@@ -19,6 +19,8 @@ export class PainelComponent implements OnInit {
 
   public progresso: number = 0
 
+  public tentativas: number = 3
+
   constructor() {
     this.atualizaRodada()
   }
@@ -43,7 +45,11 @@ export class PainelComponent implements OnInit {
 
       this.resposta = ''
     } else {
-      alert('A tradução está errada! ')
+      //diminuir a variável tentativas
+      this.tentativas--
+      if (this.tentativas === -1) {
+
+      }
     }
   }
 
